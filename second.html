@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper //simple</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            margin: auto;
+        }
+        .nav-link {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-link li a {
+            padding: 10px;
+        }
+
+        h2 {
+            background-color: rgb(196, 164, 164);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-center">
+            <h4> Color Flipper</h4>
+            <ul class="nav-link">
+                <li>
+                    <a href="index.html"> simple </a>
+                </li>
+                <li>
+                    <a href="hex.js"> hex </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>background-color : <span class="color">
+                    #F1F5F8
+                </span></h2>
+            <button class="btn btn-hero" id="btn">Click Me</button>
+        </div>
+    </main>
+
+
+    <script>
+        const hex =[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A","B","C",
+        "D","E","F"];
+        const btn = document.getElementById("btn");
+        const color = document.querySelector(".color");
+        btn.addEventListener("click",function(){
+            let hexColor="#";
+            for (let i=0; i < 6; i++){
+                hexColor += hex [getrandomNumber()];
+            }
+            color.textContent=hexColor;
+            document.body.style.backgroundColor= hexColor;
+        });
+        function getrandomNumber(){
+            return Math.floor(Math.random()*hex.length)
+        }
+
+    </script>
+</body>
+
+</html>
